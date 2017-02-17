@@ -5,7 +5,7 @@ import {
   PanResponder,
   TouchableHighlight
 } from 'react-native';
-import styles from './styles';
+import { styles, joystickSize } from './styles';
 
 export default class Joystick extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ export default class Joystick extends Component {
   }
   render() {
     const { x, y } = this.state;
-    const inputRad = Math.min(Math.sqrt(x * x + y * y), 35);
+    const inputRad = Math.min(Math.sqrt(x * x + y * y), joystickSize * 0.5 - 15);
     let innerJoystickX = x * inputRad / Math.sqrt(x * x + y * y);
     let innerJoystickY = y * inputRad / Math.sqrt(x * x + y * y);
     // zero the axes when not taking any input
@@ -57,8 +57,8 @@ export default class Joystick extends Component {
       innerJoystickX = 0;
       innerJoystickY = 0;
     }
-    innerJoystickX += 30;
-    innerJoystickY += 30;
+    innerJoystickX += joystickSize * 0.5 - 20;
+    innerJoystickY += joystickSize * 0.5 - 20;
 
     return (
       <View ref={(v) => { this.jview = v; }} style={styles.joystick} {...this._panResponder.panHandlers} onLayout={this.onLayout}>

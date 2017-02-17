@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+export const joystickSize = 100;
+
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -13,9 +15,9 @@ export default StyleSheet.create({
     marginBottom: 5,
   },
   joystick: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
+    width: joystickSize,
+    height: joystickSize,
+    borderRadius: joystickSize * 0.5,
     borderWidth: 5,
     backgroundColor: '#5d5d5d'
   },

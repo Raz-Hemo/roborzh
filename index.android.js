@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { AppRegistry, View } from 'react-native';
 import Button from 'react-native-button';
 import Joystick from './joystick';
-import styles from './styles';
+import { styles } from './styles';
 
 export default class roborzh extends Component {
   render() {
